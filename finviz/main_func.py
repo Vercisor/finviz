@@ -118,7 +118,7 @@ def get_news(ticker):
 
         results.append((
             parsed_timestamp.strftime("%Y-%m-%d %H:%M"),
-            row.xpath("./td")[1].cssselect('a[class="tab-link-news"]')[0].xpath("text()")[0],
+            row.xpath("./td")[1].cssselect('a[class="tab-link-news"]')[0].xpath("text()"),
             row.xpath("./td")[1].cssselect('a[class="tab-link-news"]')[0].get("href"),
             row.xpath("./td")[1].cssselect('div[class="news-link-right"] span')[0].xpath("text()")[0][1:]
         ))

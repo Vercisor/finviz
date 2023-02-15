@@ -110,10 +110,10 @@ def get_news(ticker):
         raw_timestamp = row.xpath("./td")[0].xpath("text()")[0][0:-2]
 
         if len(raw_timestamp) > 8:
-            parsed_timestamp = datetime.strptime(raw_timestamp, "%b-%d-%y %I:%M%p")
+            parsed_timestamp = datetime.strptime(raw_timestamp, "%b-%d-%y %H:%M")
             date = parsed_timestamp.date()
         else:
-            parsed_timestamp = datetime.strptime(raw_timestamp, "%I:%M%p").replace(
+            parsed_timestamp = datetime.strptime(raw_timestamp, "%I:%M").replace(
                 year=date.year, month=date.month, day=date.day)
 
         results.append((
